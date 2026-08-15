@@ -58,7 +58,7 @@ defmodule Scry.Engine.EpistemeTest do
     end
   end
 
-  describe "the lang_spec.md §8.4 worked example -- a WHERE-embedded goal call" do
+  describe "the worked example -- a WHERE-embedded goal call" do
     test "age(Y) > 10 conjoins a second goal and filters by its own resolved value" do
       assert run!("SELECT parent(X, Y) WHERE age(Y) > 10 { X, Y }") == [
                %{"X" => "tom", "Y" => "bob"}

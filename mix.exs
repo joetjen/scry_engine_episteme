@@ -51,15 +51,14 @@ defmodule Scry.Engine.Episteme.MixProject do
       # `Scry.Core.EngineBehaviour` and returns `Scry.Core.Query.t()`-
       # shaped data, so it's the real dependency, not test-only. Switch
       # to a `~> x.y` Hex requirement once scry_core is actually
-      # published (impl_spec.md's own dependency-versions convention).
+      # published.
       {:scry_core, path: "../scry_core"},
 
       # === LOGIC BACKEND ===
       # Also a local path dependency for the same reason -- episteme
       # isn't published to Hex yet either (its own README). No separate
       # "driver" dependency the way scry_engine_exqlite has `exqlite`:
-      # episteme *is* the backend (impl_spec.md §6), not a thin client
-      # over something else.
+      # episteme *is* the backend, not a thin client over something else.
       {:episteme, path: "../episteme"},
 
       # === CODE QUALITY & STATIC ANALYSIS ===
@@ -99,7 +98,7 @@ defmodule Scry.Engine.Episteme.MixProject do
 
   defp description do
     "A real, kind-independent Scry.Core.EngineBehaviour implementation for the logic kind " <>
-      "(lang_spec.md §8.4) over Episteme -- a genuine Prolog-like resolution engine and " <>
+      "over Episteme -- a genuine Prolog-like resolution engine and " <>
       "clause database, facts/rules included, not a hand-rolled reference conn."
   end
 

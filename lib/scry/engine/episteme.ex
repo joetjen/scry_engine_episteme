@@ -1,6 +1,6 @@
 defmodule Scry.Engine.Episteme do
   @moduledoc """
-  `Scry.Core.EngineBehaviour` for lang_spec.md §8.4's `logic` variant,
+  `Scry.Core.EngineBehaviour` for the `logic` variant,
   backed by a real Prolog-like resolution engine
   ([Episteme](https://hex.pm/packages/episteme)) instead of
   `scry_logic`'s own hand-rolled reference `conn`
@@ -9,9 +9,9 @@ defmodule Scry.Engine.Episteme do
   plain `Episteme.Database.t()` -- built via `Episteme.Database.new/1`
   plus `add_fact/2`/`add_clause/2`/`consult_forms/2`, the same
   database a caller queries directly with `Episteme.query/2` for
-  anything outside Scry. impl_spec.md §6's own roadmap entry: "no
-  separate driver segment -- episteme *is* the backend, logic database
-  included, not a thin client over something else."
+  anything outside Scry. No separate driver segment -- episteme *is*
+  the backend, logic database included, not a thin client over
+  something else.
 
   `SELECT ancestor(X, "bob") WHERE age(X) > 30 { X }` becomes: resolve
   the call-shaped source (`%Scry.Core.Query{}.goal_args`) into an

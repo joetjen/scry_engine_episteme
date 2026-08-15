@@ -1,18 +1,17 @@
 # scry_engine_episteme
 
 A real [`Scry.Core.EngineBehaviour`](https://github.com/joetjen/scry_core)
-implementation for the `logic` kind (lang_spec.md §8.4), backed by
+implementation for the `logic` kind, backed by
 [Episteme](https://hex.pm/packages/episteme) -- a genuine Prolog-like
 resolution engine and clause database for Elixir -- instead of
 [`scry_logic`](https://github.com/joetjen/scry_logic)'s own hand-rolled
 reference `conn` (facts and rules written directly as Elixir closures).
 No separate driver dependency the way most other `scry_engine_*`
 packages have one: Episteme *is* the backend, logic database included,
-not a thin client over something else (impl_spec.md §6).
+not a thin client over something else.
 
-Source: <https://github.com/joetjen/scry_engine_episteme>. Specs live
-in the separate [`scry`](https://github.com/joetjen/scry) repository;
-the behaviour this implements lives in
+Source: <https://github.com/joetjen/scry_engine_episteme>. The
+behaviour this implements lives in
 [`scry_core`](https://github.com/joetjen/scry_core).
 
 ## Usage
